@@ -1,0 +1,5 @@
+export const ADD_IMAGES = 'ADD_IMAGES';
+export const ADD_LIKED_IMAGE = 'ADD_LIKED_IMAGE';
+export const ADD_SEARCHED_IMAGE = 'ADD_SEARCHED_IMAGE';
+
+

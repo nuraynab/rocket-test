@@ -2,9 +2,17 @@ import React from 'react';
 import styled from 'styled-components'
 
 function Search(props) {
+    console.log(props.isClicked);
+
+    function handleKeyDown(e) {
+        if (e.key === 'Enter') {
+            console.log('do validate');
+        }
+    }
+
     return(
         <SearchBlock isClicked={props.isClicked} >
-            <h2>Поиск</h2>
+            <SearchInput placeholder="Поиск" placeholderTextColor="white" onKeyDown={handleKeyDown}/>
             <ul>
                 <li>Wallpapers</li>
                 <li>Textures & Patterns</li>
@@ -37,25 +45,7 @@ const SearchBlock = styled.div`
         justify-content: center;
         margin: 35px 100px;
         color: white;
-        h2 {
 
-            margin: 10px;
-            padding: 15px;
-            font-size: 44px;
-            font-weight: lighter;
-            text-align:center;
-            background: linear-gradient(
-              to left,
-              black 0%,
-              grey 30%,
-              grey 50%,
-              black 100%
-            )
-            left
-            bottom
-            no-repeat;
-          background-size:100% 1px
-        }
         ul{
             margin: 10px;
             list-style-type:none;
@@ -85,6 +75,23 @@ const SearchBlock = styled.div`
             }
         }
     `;
+
+const SearchInput = styled.input`
+    width: 100%;
+    color: white;
+    margin: 10px;
+    padding: 15px;
+    font-size: 44px;
+    font-weight: lighter;
+    text-align:center;
+    background: #000000;
+    border-left: none; 
+    border-right: none; 
+    border-top: none;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(to right, black, grey, grey, black ) 47% 0%;   
+    background-size:100% 1px
+`;
 
 
 export default Search;

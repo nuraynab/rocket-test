@@ -9,7 +9,7 @@ const Header = () => {
   const [isHistory, historyIsClicked] = useState(false);
   return(
       <Navbar>
-        <Logo>
+        <Logo href='/home'>
             <img src={logoImg} alt="" ></img>
             <span>ImageStock</span>
         </Logo>
@@ -62,7 +62,9 @@ const MenuLink = styled.a`
     }
     `;
 
-const Logo = styled.div`
+const Logo = styled.a`
+    text-decoration: none;
+    cursor: pointer;
     color: white;
     margin: 5px 100px;
     padding: 10px;
